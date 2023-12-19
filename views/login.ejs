@@ -1,0 +1,77 @@
+
+
+ 
+  
+
+
+    <%-include("header")-%> 
+
+
+  </section>
+  <section class="vh-100 gradient-custom" style="background-color: black;">
+    <div class="container w-400 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100" >
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5 ">
+          <div class="card text-white border-2 border-light" style="border-radius: 1rem; background-color: black;">
+            <div class="card-body p-5 ">
+  
+              <div class="mb-md-5 mt-md-4 pb-1 ">
+  
+                <h2 class="fw-bold mb-5 text-uppercase text-light text-center">Login</h2>
+                    
+              
+                
+
+                <form action="/api/login" method="post">
+                  <% if (message) { %>
+                    <h5 class="text-danger text-center"><%=message %></h5>
+                  <% } %>
+                      <div class="form-outline form-white mb-4 " >
+                        <input  type="email" id="typeEmailX" value=" <%=emailvalue%>" class=" form-control form-control-lg " name="email" />
+                        <% if (emailmessage) { %>
+                          <p class="text-danger "><%=emailmessage %></p>
+                        <% } %>
+                        <label class=" form-label"  for="typeEmailX">email</label>
+
+                       
+                        
+                      </div>
+                  
+                      <div class="form-outline form-white mb-2 ">
+                        <input type="password" id="typePasswordX" value="<%= passwordValue %>" class="form-control form-control-lg" name="password" />
+                        <% if (passwordmessage) { %>
+                          <!-- <div class="alert alert-danger" style="background-color: black;" role="alert"> -->
+                            <p class="text-danger"><%=passwordmessage %></p>
+                          <!-- </div> -->
+                        <% } %>
+
+                        <label class="form-label" for="typePasswordX">Password</label>
+                       
+                      </div>
+        
+                      <p class="small  pb-lg-2 text-end"><a class="text-danger" href="/forgotpassword1">Forgot password?</a></p>
+        
+                      <button class="btn btn-outline-light btn-lg px-5 bg-success " type="submit">Login</button>
+                </form>
+                
+  
+              </div>
+  
+              <div>
+                 <a href="/register1" class="text-danger fw-bold ">Register</a>
+                </p>
+                
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- //login page -->
+
+  <%-include("footer")-%>
+
+ 
